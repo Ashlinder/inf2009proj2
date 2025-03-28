@@ -1,0 +1,2 @@
+Binary Classification - Accuracy: 100.00%, Precision: 1.00, Recall: 1.00, F1 Score: 1.00
+Multi-Class Classification - Accuracy: 98.73%, Precision: 0.99, Recall: 0.99, F1 Score: 0.99

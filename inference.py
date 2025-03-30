@@ -1,4 +1,4 @@
-import gradio as gr
+#import gradio as gr
 import torch
 import torchvision.transforms as transforms
 from PIL import Image
@@ -6,8 +6,10 @@ import cv2
 import numpy as np
 import onnxruntime as ort
 
+# The folloiwng to be included in inference in pi
+#####################################################################################################################
 # Paths
-QUANTIZED_ONNX_MODEL_PATH = "model_quantized.onnx"
+QUANTIZED_ONNX_MODEL_PATH = "/home/admin/pi/model_quantized.onnx"
 ACTIVITIES = ['Violence', 'Theft']  # Multi-class labels
 
 # Load the ONNX model
@@ -59,14 +61,17 @@ def predict(video_path):
     else:
         return "No suspicious activity detected."
 
-# Create Gradio interface
-iface = gr.Interface(
-    fn=predict,
-    inputs=gr.Video(),
-    outputs="text",
-    title="Activity Detection",
-    description="Upload or record a video to detect suspicious activities with probability scores.",
-)
 
-if __name__ == "__main__":
-    iface.launch()
+###############################################################################################################
+# Exculde this part in pi
+# Create Gradio interface
+# iface = gr.Interface(
+#     fn=predict,
+#     inputs=gr.Video(),
+#     outputs="text",
+#     title="Activity Detection",
+#     description="Upload or record a video to detect suspicious activities with probability scores.",
+# )
+
+# if __name__ == "__main__":
+#     iface.launch()
